@@ -11,10 +11,17 @@ sample event = {
     }
 '''
 
+class bcolors:
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    PINK = '\033[95m'
+    GREEN = '\033[92m'
+    ENDC = '\033[0m'
+
 def main():
     while True:
         print("===========================")
-        print("Garbhan's NUIG Planner App")
+        print(f"{bcolors.YELLOW}Garbhan's NUIG Planner App{bcolors.ENDC}")
         print("What would you like to do?...\n")
 
         print("Press (1) to add an event...")
@@ -30,7 +37,7 @@ def main():
             case "1":
                 event = {}
 
-                event_name = input("Event name: ")
+                event_name = input(f"{bcolors.PINK}Event name: {bcolors.ENDC}")
                 event["name"] = event_name
 
                 event_desc = input("Event description: ")
@@ -79,7 +86,7 @@ def main():
                 for i, entry in enumerate(data.copy()):
                     if i+1 == int(to_delete):
                         data.pop(entry)
-                        print(f"{entry} has been removed\n")
+                        print(f"{bcolors.RED}{entry} has been removed{bcolors.ENDC}\n")
                     else:
                         "Sorry, no entry for that index."
 
@@ -111,7 +118,7 @@ def main():
                 with open("plans.json", "r") as file:
                     data = json.load(file)
                     for key in data.keys():
-                        print(f"-------- {key} --------\n")
+                        print(f"{bcolors.GREEN}-------- {key} --------{bcolors.ENDC}\n")
                         for key, val in data[key].items():
                             print(f"{key}: {val}")
                         print("\n")
