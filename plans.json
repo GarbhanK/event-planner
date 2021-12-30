@@ -12,5 +12,12 @@
         "week": "6",
         "module": "CT6221",
         "due": "Wed 16 March 2022"
+    },
+    "Job Interview": {
+        "name": "Job Interview",
+        "description": "data systems ireland - galway office",
+        "week": "7",
+        "module": "NA",
+        "due": "Wed 19 January 2022"
     }
 }

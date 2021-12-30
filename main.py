@@ -1,22 +1,18 @@
 import json
 import datetime
-import time
 
 '''
-event = {
+sample event = {
         "name": "event1",
-        "description": "quick zoom with the module coordinator",
-        "week": "Week 4",
-        "date": "date example",
+        "description": "quick zoom meeting with the module coordinator",
+        "week": "4",
         "module": "CT2002",
-        "due" : "example date"
+        "due" : "Wed 16 March 2022"
     }
 '''
 
 def main():
-
     while True:
-
         print("===========================")
         print("Garbhan's NUIG Planner App")
         print("What would you like to do?...\n")
@@ -30,8 +26,8 @@ def main():
         do = input()
 
         match do:
+            # Add a new event
             case "1":
-                print("add event")
                 event = {}
 
                 event_name = input("Event name: ")
@@ -64,7 +60,7 @@ def main():
                     json.dump(data, file, indent=4)
                 print(f'\n {event["name"]} has been added!\n')
                 continue
-            
+
             # Remove an Event from local JSON
             case "2":
                 with open("plans.json", "r") as file:
@@ -74,12 +70,11 @@ def main():
                     for i, entry in enumerate(data):
                         print(f"\n({i+1}) {entry}: {data[entry]['description']}")
                     print(f"({len(data)+1}) Quit to main menu")
-                    
+
                     # take index as input, then loop over data and delete entry with matching key
                     to_delete = input("\nWhich event do you want to remove?... \n")
                     if to_delete == len(data)+1:
                         continue
-                    #print(f"deleting {to_delete}...\n")
 
                 for i, entry in enumerate(data.copy()):
                     if i+1 == int(to_delete):
@@ -87,18 +82,30 @@ def main():
                         print(f"{entry} has been removed\n")
                     else:
                         "Sorry, no entry for that index."
-                
+
                 with open("plans.json", "w") as file:
                     data = json.dump(data, file, indent=4)
                 continue
 
             # View Timetable    
             case "3":
-                print("view timeable coming soon!\n")
-                time.sleep(1)
+                print('''
+                | Time | Monday        | Tuesday       | Wednesday | Thursday     |
+                | ---- | ------------- | ------------- | --------- | ------------ |
+                | 9am  |               | Lab - DSwR    |           | Lab - BI     |
+                | 10am | Lec - DSwR    | Lab - DSwR    | Lec - BI  | Lab - BI     |
+                | 11am | Lec - DSwR    | Lec - Stats2  | Lec - BI  | Lec - Stats2 |
+                | 12pm |               |               |           |              |
+                | 1pm  |               | Lec - DataVis |           |              |
+                | 2pm  | Lec - DataVis | TBD           |           |              |
+                | 3pm  | Lec - DataVis |               |           |              |
+                | 4pm  | Lec - Stats   |               |           |              |
+                | 5pm  |               |               |           |              |
+                | 6pm  |               |               |           |              |
+
+                ''')
                 continue
 
-            
             # View all saved Events, loaded from local JSON
             case "4":
                 with open("plans.json", "r") as file:
@@ -109,19 +116,14 @@ def main():
                             print(f"{key}: {val}")
                         print("\n")
                 continue
-            
+
+            # exit the application
             case "5":
-                print("""\
-
-                                       ._ o o
-                                       \_`-)|_
-                                    ,""       \ 
-                                  ,"  ## |   ಠ ಠ.   cya
-                                ," ##   ,-\__    `.
-                              ,"       /     `--._;)
-                            ,"     ## /
-                          ,"   ##    /
-
+                print("""
+                       ___  
+                      /  .\ 
+                     /  =__|
+                cya /    ||
 
                     """)
                 quit()
