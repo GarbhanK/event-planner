@@ -3,7 +3,6 @@
         "name": "event1",
         "description": "quick zoom with the module coordinator",
         "week": "Week 4",
-        "date": "date example",
         "module": "CT2002",
         "due": "example date"
     },
