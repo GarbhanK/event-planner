@@ -1,0 +1,17 @@
+{
+    "event": {
+        "name": "event1",
+        "description": "quick zoom with the module coordinator",
+        "week": "Week 4",
+        "date": "date example",
+        "module": "CT2002",
+        "due": "example date"
+    },
+    "Data Visualisation Group Project": {
+        "name": "Data Visualisation Group Project",
+        "description": "Project with tim and bob to summarise and present data on the IRIS dataset",
+        "week": "6",
+        "module": "CT6221",
+        "due": "Wed 16 March 2022"
+    }
+}
