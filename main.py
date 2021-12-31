@@ -76,7 +76,7 @@ def main():
                     # may change from description to something else later            
                     for i, entry in enumerate(data):
                         print(f"\n({i+1}) {entry}: {data[entry]['description']}")
-                    print(f"({len(data)+1}) Quit to main menu")
+                    print(f"\n({len(data)+1}) Quit to main menu")
 
                     # take index as input, then loop over data and delete entry with matching key
                     to_delete = input("\nWhich event do you want to remove?... \n")
