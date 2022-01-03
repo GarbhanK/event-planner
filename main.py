@@ -74,8 +74,7 @@ def main():
                     data = json.load(file)
                     # loop over entries with an index, entry name and description
                     # may change from description to something else later            
-                    for i, entry in enumerate(data):
-                        print(f"\n({i+1}) {entry}: {data[entry]['description']}")
+                    [print(f"\n({i+1}) {entry}: {data[entry]['description']}") for i, entry in enumerate(data)]
                     print(f"\n({len(data)+1}) Quit to main menu")
 
                     # take index as input, then loop over data and delete entry with matching key
@@ -87,9 +86,7 @@ def main():
                     if i+1 == int(to_delete):
                         data.pop(entry)
                         print(f"{bcolors.RED}{entry} has been removed{bcolors.ENDC}\n")
-                    else:
-                        "Sorry, no entry for that index."
-
+                    else: "Sorry, no entry for that index."
                 with open("plans.json", "w") as file:
                     data = json.dump(data, file, indent=4)
                 continue
@@ -119,8 +116,7 @@ def main():
                     data = json.load(file)
                     for key in data.keys():
                         print(f"{bcolors.GREEN}-------- {key} --------{bcolors.ENDC}\n")
-                        for key, val in data[key].items():
-                            print(f"{key}: {val}")
+                        [print(f"{key}: {val}") for key, val in data[key].items()]
                         print("\n")
                 continue
 
