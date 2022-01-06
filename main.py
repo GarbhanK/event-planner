@@ -101,7 +101,7 @@ def main():
                 | 11am | Lec - DSwR    | Lec - Stats2  | Lec - BI  | Lec - Stats2 |
                 | 12pm |               |               |           |              |
                 | 1pm  |               | Lec - DataVis |           |              |
-                | 2pm  | Lec - DataVis | TBD           |           |              |
+                | 2pm  | Lec - DataVis | Lab - DataVis |           |              |
                 | 3pm  | Lec - DataVis |               |           |              |
                 | 4pm  | Lec - Stats   |               |           |              |
                 | 5pm  |               |               |           |              |
